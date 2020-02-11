@@ -1,0 +1,5 @@
+80,00 1985 Pamyatnik Pushkin Poesiya
+120,00 1999 Matematika Ivanov Nauka
+150,00 2005 Russkiy_Yazyk Petrov Lingvistika
+330,00 2013 Vsadnik_bez_golovy Rid Hudozhestvennaya
+220,00 2015 Gore_ot_uma Griboedov Proza
