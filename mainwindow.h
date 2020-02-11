@@ -2,12 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <Windows.h>
-#include "mydata.h"
-
+#include "windows.h"
 
 namespace Ui {
-    class MainWindow;
+class MainWindow;
 }
 
 class MainWindow : public QMainWindow
@@ -17,44 +15,33 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    static DWORD WINAPI ThreadFunc( LPVOID lpParam );
-    static DWORD WINAPI ThreadCs( LPVOID lpParam );
-    static DWORD WINAPI MutexFunc( LPVOID lpParam );
-    static DWORD WINAPI SemaFunc( LPVOID lpParam );
-    static DWORD WINAPI ManualEventFunc( LPVOID lpParam );
-    static DWORD WINAPI AutoEventFunc( LPVOID lpParam );
-
-    void prepareThreads( LPTHREAD_START_ROUTINE lpStartAddr, HANDLE hObject=NULL);
 
 private:
-    static volatile int m_X;
-    static CRITICAL_SECTION cs;
-    QVector<MyData*> ar;
-
     Ui::MainWindow *ui;
 
-    HANDLE hMutex;
-    HANDLE hSema;
-    HANDLE hNamedMutex;
-    HANDLE hNamedSema;
-    HANDLE hManualEvent;
-    HANDLE hAutoEvent;
-    HANDLE hNamedManualEvent;
+    LPVOID pMap;
+    LPVOID pMap_wf;
+    HANDLE hfile;
+    HANDLE hfile_wf;
+    HANDLE hfilemap;
+    HANDLE hfilemap_wf;
+    int sizeFMapping = 512;
 
-public slots:
-    void ThreadsGo();
-    void CriticalSection();
-    void Mutex();
-    void Semaphore();
-    void SystemMutex();
-    void SystemSemaphore();
-    void ManualEvent();
-    void ManualStop();
-    void ManualContinue();
-    void AutoEvent();
-    void NamedManualEvent();
-    void NamedManualStop();
-    void NamedManualContinue();
+protected:
+    virtual bool nativeEvent(const QByteArray &eventType, void *message, long *result) override;
+
+signals:
+    void CopyData(const QString & data);
+
+private slots:
+    void on_pushButton_create_file_mapping_clicked();
+    void on_pushButton_read_file_mapping_clicked();
+    void on_pushButton_close_file_mapping_clicked();
+    void on_pushButton_create_file_mapping_wf_clicked();
+    void on_pushButton_write_file_mapping_wf_clicked();
+    void on_pushButton_read_file_mapping_wf_clicked();
+    void on_pushButton_close_file_mapping_wf_clicked();
+    void on_lineEdit_file_mapping_wf_textChanged(const QString &arg1);
 };
 
 #endif // MAINWINDOW_H
