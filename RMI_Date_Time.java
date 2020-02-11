@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RMI_Date_Time;
+package lab_2_tcp_ip_rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
