@@ -7,204 +7,25 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>500</height>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Child window for message</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>381</width>
-      <height>71</height>
+      <x>140</x>
+      <y>100</y>
+      <width>93</width>
+      <height>28</height>
      </rect>
     </property>
-    <property name="title">
-     <string>Вывод сообщения от WM_COPYDATA</string>
+    <property name="text">
+     <string>PushButton</string>
     </property>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>351</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>381</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>File mapping</string>
-    </property>
-    <widget class="QLineEdit" name="lineEdit_file_mapping">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>241</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_create_file_mapping">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>20</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Создать</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_read_file_mapping">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>60</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Чтение</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_close_file_mapping">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>100</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Закрыть</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_file_mapping">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>241</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>240</y>
-      <width>381</width>
-      <height>191</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>File mapping with file</string>
-    </property>
-    <widget class="QLineEdit" name="lineEdit_file_mapping_wf">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>231</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="inputMethodHints">
-      <set>Qt::ImhMultiLine</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_file_mapping_wf">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>150</y>
-       <width>231</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_create_file_mapping_wf">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>30</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Создать</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_write_file_mapping_wf">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>70</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Запись</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_read_file_mapping_wf">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>110</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Чтение</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_close_file_mapping_wf">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>150</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Закрыть</string>
-     </property>
-    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
