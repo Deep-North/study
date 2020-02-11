@@ -1,0 +1,17 @@
+radius, x, y
+coordinates: x 0, y 0, radius 0
+
+coordinates: x 0, y 0, radius 1
+
+coordinates: x 0, y 0, radius 2
+
+coordinates: x 0, y 0, radius 3
+
+coordinates: x 0, y 0, radius 4
+
+coordinates: x 0, y 0, radius 5
+
+coordinates: x 0, y 0, radius 6
+
+coordinates: x 0, y 0, radius 7
+
