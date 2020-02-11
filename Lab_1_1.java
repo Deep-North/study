@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab_1;
+package lab_1_1;
 
-import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 /**
  *
  * @author Deep-North
@@ -16,37 +19,37 @@ public class Lab_1_1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Введите три целых числа числа: ");
-        Scanner scan = new Scanner(System.in);
-	int number1 = scan.nextInt();
-        int number2 = scan.nextInt();
-        int number3 = scan.nextInt();
-	System.out.println ("Вы ввели числа: " + number1 + " " + number2 + " " + number3);
-
-//        int n1 = Math.min(number1, number2);
-//        int n_min = Math.min(number3, n1);
-//        int n2 = Math.max(number1, number2);
-//        int n_max = Math.max(number3, n2);
-//        int n_mid = (number1+number2+number3) - (n_max+n_min);
-//        System.out.println("Порядок чисел по возрастанию: " + n_min + " " + n_mid + " " + n_max);
-        if (number1>number3){
-            int tmp = number1;
-            number1 = number3;
-            number3 = tmp;
-        }
-        if (number1>number2){
-            int tmp = number1;
-            number1 = number2;
-            number2 = tmp;
-        }
-        if (number2>number3){
-            int tmp = number2;
-            number2 = number3;
-            number3 = tmp;
-        }
-        System.out.println("Порядок чисел по возрастанию: " + number1 + " " + number2 + " " + number3);
+    public static void main(String[] args) throws MalformedURLException {
         
-    } 
+        URL myURL = new URL("http://www.avalon.ru");
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(myURL.openStream()))) {
+            String inputLine1;
+            String inputLine2;
+            String inputLine3;
+            boolean flag = false;
+            int n = 0;
+            System.out.println("/***** Содержимое страницы " + myURL.toString() + " *****/\n");
+
+            while((inputLine1 = in.readLine()) != null) {
+                ++n;
+                inputLine2 = inputLine1.trim();
+                if (inputLine2.matches("<script>|<script.*|<head>|<noscript>")) {
+                    flag = true;
+                    inputLine3 = "";
+                }
+                else  {inputLine3 = inputLine2.replaceAll("<[^>]*>|&copy|&nbsp","");}
+
+                if (inputLine2.matches("</script>|</head>|</noscript>")) {
+                    flag = false;
+                }
+
+                if (!flag && inputLine3.trim().length() != 0) {
+                    System.out.print(n + ". ");
+                    System.out.println(inputLine3);
+                }
+            }
+        } catch (IOException ioe) {
+            ioe.printStackTrace(System.err);
+        }
+    }        
 }
